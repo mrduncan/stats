@@ -26,7 +26,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "stats"
-    gemspec.summary = "Easily keep track of vital stats using Redis."
+    gemspec.summary = "Simple stats collection using Redis."
     gemspec.email = "matt@mattduncan.org"
     gemspec.homepage = "http://github.com/mrduncan/stats"
     gemspec.authors = ["Matt Duncan"]
