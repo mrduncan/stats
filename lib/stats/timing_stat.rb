@@ -5,7 +5,7 @@ module Stats
       sum / length.to_f
     end
 
-    # Returns the sample variance of the values.
+    # Returns the population variance of the values.
     def population_variance
       avg = average
       1 / length.to_f * inject(0) { |acc, i| acc + (i - avg) ** 2 }
