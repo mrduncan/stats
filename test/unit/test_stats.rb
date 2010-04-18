@@ -67,6 +67,12 @@ class TestStats < Test::Unit::TestCase
     Stats.decr("tickets_left", 4)
   end
 
+  def test_should_get_counter
+    Stats.redis = mock('redis')
+    Stats.redis.expects(:get).with("downloads").returns("10")
+    assert_equal 10, Stats.counter("downloads")
+  end
+
   def test_should_clear
     Stats.redis = mock('redis')
     Stats.redis.expects(:del).with("downloads")

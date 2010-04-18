@@ -29,6 +29,11 @@ module Stats
     Stats.redis.decrby(name, by)
   end
 
+  # Returns the value of the counter with the specified name.
+  def counter(name)
+    Stats.redis.get(name).to_i
+  end
+
   # Clears the stat with the specified name.
   def clear(name)
     Stats.redis.del(name)

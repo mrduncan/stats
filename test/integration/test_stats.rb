@@ -16,19 +16,19 @@ class TestStats < Test::Unit::TestCase
   end
 
   def test_should_increment
-    assert_equal 0, Stats.get("downloads").to_i
+    assert_equal 0, Stats.counter("downloads")
     Stats.incr("downloads")
-    assert_equal 1, Stats.get("downloads").to_i
+    assert_equal 1, Stats.counter("downloads")
     Stats.incr("downloads", 2)
-    assert_equal 3, Stats.get("downloads").to_i
+    assert_equal 3, Stats.counter("downloads")
   end
 
   def test_should_decrement
     Stats.set("invitations", 100)
     Stats.decr("invitations")
-    assert_equal 99, Stats.get("invitations").to_i
+    assert_equal 99, Stats.counter("invitations")
     Stats.decr("invitations", 4)
-    assert_equal 95, Stats.get("invitations").to_i
+    assert_equal 95, Stats.counter("invitations")
   end
 
   def test_should_clear
