@@ -1,22 +1,22 @@
 module Stats
   class TimingStat < Array
     # Returns the average value.
-    def average
+    def avg
       return nil if length == 0
       sum / length.to_f
     end
 
     # Returns the population variance of the values.
-    def population_variance
+    def pop_var
       return nil if length == 0
-      avg = average
-      1 / length.to_f * inject(0) { |acc, i| acc + (i - avg) ** 2 }
+      average = avg
+      1 / length.to_f * inject(0) { |acc, i| acc + (i - average) ** 2 }
     end
 
     # Returns the standard deviation of the values.
-    def standard_deviation
+    def std_dev
       return nil if length == 0
-      Math.sqrt(population_variance)
+      Math.sqrt(pop_var)
     end
 
     private
