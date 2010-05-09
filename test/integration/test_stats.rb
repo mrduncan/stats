@@ -5,7 +5,7 @@ require 'stats'
 class TestStats < Test::Unit::TestCase
   def setup
     Stats.redis = 'localhost:6379:stats_test'
-    Stats.redis.flush_db
+    Stats.redis.flushdb
   end
 
   def test_should_set
