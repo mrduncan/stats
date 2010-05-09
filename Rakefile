@@ -30,7 +30,7 @@ begin
     gemspec.email = "matt@mattduncan.org"
     gemspec.homepage = "http://github.com/mrduncan/stats"
     gemspec.authors = ["Matt Duncan"]
-    gemspec.version = '0.1.0'
+    gemspec.version = '0.2.0'
     gemspec.add_dependency 'redis'
     gemspec.description = <<description
 The stats gem is a simple way to keep track of different statistics using
