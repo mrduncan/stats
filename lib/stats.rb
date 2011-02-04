@@ -19,14 +19,29 @@ module Stats
     Stats.redis.get(name)
   end
 
+  # Alias of `get`
+  def [](name)
+    get(name)
+  end
+
   # Increments the stat with the specified name.
   def incr(name, by = 1)
     Stats.redis.incrby(name, by)
   end
 
+  # Increments the stat with the specified name by 1.
+  def <<(name)
+    incr(name)
+  end
+
   # Decrements the stat with the specified name.
   def decr(name, by = 1)
     Stats.redis.decrby(name, by)
+  end
+
+  # Decrements the stat with the specified name by 1.
+  def >>(name)
+    decr(name)
   end
 
   # Returns the value of the counter with the specified name.
