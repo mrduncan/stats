@@ -36,6 +36,4 @@ Installation
 
 Author
 ------
-
-Matt Duncan
-matt@mattduncan.org
+Matt Duncan | [mattduncan.org](http://mattduncan.org) | [matt@mattduncan.org](mailto:matt@mattduncan.org)
